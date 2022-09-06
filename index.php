@@ -198,7 +198,7 @@
                 </div>
                 <div>
                     <label for="AppointDate">Preferred Date</label>
-                    <input type="text" name="appointmentdate" id="appointmentdate">
+                    <input type="text" name="appointmentdate" id="appointmentdate" readonly>
                 </div>
                 <div>
                     <label for="message">Message</label>
