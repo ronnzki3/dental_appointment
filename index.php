@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>        
     <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-container">
@@ -201,6 +201,19 @@
                     <input type="text" name="appointmentdate" id="appointmentdate" readonly>
                 </div>
                 <div>
+                    <label for="AppointTime">Preferred Time</label>                    
+                    <select name="appointmenttime" id="appointmenttime">
+                        <option value="8">8:00 AM</option>
+                        <option value="9">9:00 AM</option>
+                        <option value="10">10:00 AM</option>
+                        <option value="11">11:00 AM</option>
+                        <option value="13">1:00 PM</option>
+                        <option value="14">2:00 PM</option>
+                        <option value="15">3:00 PM</option>
+                        <option value="16">4:00 PM</option>
+                    </select>
+                </div>
+                <div>
                     <label for="message">Message</label>
                     <textarea name="message" id="" cols="30" rows="10"></textarea>
                 </div>
@@ -216,7 +229,6 @@
     <script type="text/javascript" src="jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
-
     <script>
         $( function() {
             $("#appointmentdate").datepicker();

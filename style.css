@@ -222,6 +222,13 @@ html{
     padding: 3px;
     font-size: 1.3rem;
 }
+.main-container .contact-content .contact-wrapper div select{
+    padding: 3px;
+    font-size: 1.3rem;
+}
+.main-container .contact-content .contact-wrapper div select option{
+   padding: 10px;
+}
 .main-container .contact-content .contact-wrapper div div{
     width: 100%;
 }
@@ -362,3 +369,4 @@ html{
 .tr-no-border-bottom{
     border-bottom: 0px !important;
 }
+
