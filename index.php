@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
 </head>
 <body>
     <div class="main-container">
@@ -197,7 +198,7 @@
                 </div>
                 <div>
                     <label for="AppointDate">Preferred Date</label>
-
+                    <input type="text" name="appointmentdate" id="appointmentdate">
                 </div>
                 <div>
                     <label for="message">Message</label>
@@ -210,5 +211,16 @@
             <p>Dela Cruz Dental Clinic. All rights reserved 2018</p>
         </div>
     </div>
+
+    
+    <script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui.js"></script>
+
+    <script>
+        $( function() {
+            $("#appointmentdate").datepicker();
+        } );
+    </script>
 </body>
 </html>
