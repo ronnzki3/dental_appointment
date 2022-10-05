@@ -1,0 +1,39 @@
+DATABASE NAME: dentaldb
+
+###############################
+CREATE TABLE tbldental (
+    ID int not null AUTO_INCREMENT,
+    fname varchar(255) not null,
+    lname varchar(255) not null,
+    email varchar(255) not null,
+    contact varchar(25) not null,
+    address text not null,
+    appointmentdate date,
+    appointmenttime int,
+    message text not null,
+    appointment_status int DEFAULT 0,
+    date_time datetime DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (ID)
+);
+##################################
+
+###############################
+CREATE TABLE tbllogin(
+    ID int not null AUTO_INCREMENT,
+    username varchar(50) not null,
+    password varchar(255) not null,
+    PRIMARY KEY (ID)
+);
+##################################
+
+
+
+
+
+
+
+
+
+
+
+

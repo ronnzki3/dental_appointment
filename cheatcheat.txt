@@ -1,0 +1,247 @@
+###############################
+CREATE TABLE tbldental (
+	ID int not null AUTO_INCREMENT,
+    fname varchar(255) not null,
+    lname varchar(255) not null,
+    email varchar(255) not null,
+    contact varchar(25) not null,
+    address text not null,
+    appointmentdate date,
+    appointmenttime int,
+    message text not null,
+    PRIMARY KEY (ID)
+);
+##################################
+
+
+######################################
+define("DBHOST","localhost");
+define("DBNAME","dentaldb");
+define("DBUSER","root");
+define("DBPASS","");
+
+$con=mysqli_connect(DBHOST,DBUSER,DBPASS,DBNAME) or die(mysqli_connect_error());
+
+if(isset($_POST["btnSendAppointment"])){
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $email=$_POST['email'];
+    $address=$_POST['address'];
+    $contact=$_POST['phoneNumber'];
+    $appointmentdate=$_POST['appointmentdate'];
+    $appointmenttime=$_POST['appointmenttime'];
+    $message=$_POST['message'];
+
+    $sql= "INSERT INTO tbldental (fname,lname,email,contact,address,appointmentdate,appointmenttime,message) VALUES ('$fname','$lname','$email','$contact','$address','$appointmentdate','$appointmenttime','$message')";
+    $result=mysqli_query($con,$sql);
+    if($result){
+        echo "Added";
+    }
+}
+
+
+###### SELECT QUERY
+$con=mysqli_connect(DBHOST,DBUSER,DBPASS,DBNAME) or die(mysqli_connect_error());
+$query="SELECT * FROM dtabase_table WHERE columnName='parameter' ";
+$result=mysqli_query($con,$query);
+if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+	$id=$row['ID'];
+    }
+}
+
+
+###### SELECT QUERY CASE SENSITIVE
+$con=mysqli_connect(DBHOST,DBUSER,DBPASS,DBNAME) or die(mysqli_connect_error());
+$query="SELECT * FROM dtabase_table WHERE BINARY columnName='parameter' ";
+$result=mysqli_query($con,$query);
+if(mysqli_num_rows($result)>0){
+    while($row=mysqli_fetch_assoc($result)){
+	$id=$row['ID'];
+    }
+}
+
+*just add BINARY before each column after WHERE clause, if more than 1 parameters then more than 1 BINARY.
+example:
+	SELECT .... WHERE BINARY username='param' AND BINARY password='param';
+
+*In SOME CASES, u may put BINARY before declarinng parameter (better search for differences)
+example:
+	SELECT .... WHERE username= BINARY 'param' AND password= BINARY 'param';
+
+
+
+
+
+
+
+##########################
+SAVE DATE to database need to parse string first
+php format:
+	date('y-m-d', strtotime('your-date-string'));
+
+
+
+##############
+RESET FORM ELEMENT AFTER SUBMIT USING AJAX
+
+code:
+$('#formID').each(function(){
+    this.reset();
+});
+
+*add this code inside ajax success element.
+
+
+
+
+###############################################
+ADDING NEW COLUMN TO TABLE WITH DEFAULT VAUE
+*****
+ALTER TABLE `tablename` ADD `new_col_name` INT NOT NULL DEFAULT 0;
+*****
+
+
+
+CREATING TABLE WITH COMMENTS TO COLUMN
+****
+CREATE TABLE employee_designation(
+  id int NOT NULL AUTO_INCREMENT,
+  emp_id int DEFAULT NULL,
+  emp_name varchar(255) DEFAULT NULL COMMENT "name of employee",
+  emp_designation varchar(255) DEFAULT NULL,
+  primary key(id)
+);
+*****
+
+
+
+########################
+PHP code STRING to DATETIME
+****
+strtotime(your_datetime_from_database)
+******
+
+
+
+##########
+JQUERY calling click function on newly created html elements
+***code******
+ 	$(document).on("click","#update_status",function(){
+            alert("clicked dynamic html elements");
+        });
+************
+
+####################
+JQUERY trigger events on dynamic html elements
+****code***
+$(document).on("click","your_class_or_id",function(){
+	alert();
+});
+****
+
+
+##################
+JQUERY listen on SELECT OPTION change
+*****code*****
+$('select').on('change', function (e) {
+    var textSelected = $(this).find('option:selected').text();
+    var valueSelected = $(this).val();   
+});
+***********
+
+JQUERY get option selected value or text
+***code
+ $("your_id_or_class :selected").text();
+ $("your_id_or_class :selected").val();
+
+ take note: may space before :selected
+*****
+
+
+######
+JQUERY get input value
+****code
+$('your_id_or_class').val()
+*****
+
+#######
+MEDIA QUERY CSS
+******
+@media screen and (min-width:700px) {
+}
+------
+@media screen and (max-width:700px) {
+}
+
+
+#####
+CENTER YOU DIV ON SCREEN OR PARENT
+****
+.parent-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child-container{ //the child container will be position at the center
+   width:500px;
+   height:auto;
+}
+
+
+
+####JQUERY string to Int
+var sVal = '234';
+var iNum = parseInt(sVal); //Output will be 234.
+
+
+
+###### CSS TRANSITION
+***SIMPLE
+***code
+ transition: ease all 0.3s;
+
+
+
+##### CSS Scroll behavior smooth
+****asign in all elements or per elements
+
+*{
+    scroll-behavior: smooth !important;
+}
+
+
+
+############
+INSTALLING TAILWIND CSS
+1.install node.js
+2.open visual studio code editor
+3.open project folder
+4.click terminal->new terminal
+5.type "npm init -y" then press enter , to initialize npm
+  ,then the "package.json" file created inside your project folder"
+6.then follow the installation process posted on tailwind css website
+Note: if you get error:
+	warn - The `content` option in your Tailwindcss configuration is missing or empty
+solution:
+	-open tailwind.config.js
+	-add your html file inside "content[]"
+	example:
+		module.exports = {
+ 		 content: ["./public/index.html"],
+ 		 theme: {
+   		 extend: {},
+ 		 },
+  		plugins: [],
+		} 
+  
+#######
+
+
+
+
+
+
+ 

@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-wrapper{
+    width: 80%;
+    height: auto;
+    border: 1px solid #eee;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+.login-wrapper div{
+    width: 80%;
+    font-size: 1.2rem;
+} 
+.login-wrapper label,
+.login-wrapper input{
+    width: 100%;
+    padding: 5px;
+    display: block;
+    margin: 3px;
+}
+.login-wrapper #btnlogin{
+    cursor: pointer;
+    padding: 10px 5px;
+    color: white;
+    background-color: rgb(35, 35, 175);;
+    border-color: aliceblue;
+    margin-top: 15px;
+}
+.login-wrapper #btnlogin:hover{
+    background-color: rgb(41, 41, 126);
+    transition: ease all 0.3s;
+}
+.login-wrapper #error_notif{
+    width: 100%;
+    height: auto;
+}
+.login-wrapper #error_notif div{
+    width: 100%;
+    padding: 7px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: rgb(153, 69, 69);
+    color: whitesmoke;
+}
+.login-wrapper h1{
+    font-size: 2.1rem;
+    color: green;
+    margin-bottom: 5px;
+    display: block;
+    font-style: italic;
+    text-align: center;
+}
+
+.login-wrapper h2{
+    font-size: 2.1rem;
+    color: blue;
+    margin: 10px 5px;
+    display: block;
+}
+
+@media screen and (min-width:700px) {
+    .login-wrapper{
+        width: 500px;
+    }
+}
+

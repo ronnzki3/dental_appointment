@@ -1,0 +1,255 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+}
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.main-container .sidebarleft{
+    width: 250px;
+    height:100vh;
+    background-color: #3F0E40;
+    color: white;
+    position: relative;
+}
+.main-container .sidebarleft .sideheader{
+    width: 100%;
+    /* padding: 5rem 1rem; */
+    height: 150px;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    font-size: 1rem;
+}
+.main-container .sidebarleft .sidemenu{
+    width: 100%;
+    height: auto;    
+}
+.main-container .sidebarleft .sidemenu ul li{
+    display: block;
+    width: 100%;
+    /* padding: 5px 20px; */
+    font-size: 1.7rem;
+    
+}
+.main-container .sidebarleft div.logout-wrapper{
+  width: 100%;
+  position: absolute;
+  bottom: 0; 
+}
+.main-container .sidebarleft div.logout-wrapper a{
+  color: rgb(201, 61, 61);
+  display: block;
+  padding: 10px 30px ;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.main-container .sidebarleft div.logout-wrapper a:hover{
+    color: burlywood;
+    background-color: #591d5a;
+    padding-left: 40px;
+}
+.menutitle{
+    border-bottom: 1px solid rgb(82,38,83);
+    border-top: 1px solid whitesmoke;
+    padding: 20px;
+    font-weight: 600;
+}
+.main-container .sidebarleft .sidemenu ul ul{
+    display: block;
+    width: 100%;
+    /* background-color: black; */
+}
+.main-container .sidebarleft .sidemenu ul ul li a{
+    text-decoration: none;
+    color: aliceblue;
+    display: block;
+    padding: 15px 40px;
+    font-weight: 300;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.main-container .sidebarleft .sidemenu ul ul li:hover a{
+    color: burlywood;
+    background-color: #591d5a;
+    font-weight: 600;
+    padding-left: 55px;
+}
+
+.main-container .sidebarright{
+    width: calc(100% - 250px);
+    height: 100vh;
+}
+.main-container .sidebarright .rightheader{
+    width: 100%;
+    height: 50px;
+    background-color: #350d36;
+}
+.main-container .sidebarright .selected-appointment-title{
+    width: 100%;
+    /* height: 50px; */
+    border-bottom: 1px solid whitesmoke;
+    padding: 20px 50px;
+}
+
+
+
+
+/* ###### TABLE DESIGN */
+.selected-appointment-data table, 
+.selected-appointment-data td, 
+.selected-appointment-data th {  
+    border: 1px solid #ddd;
+    text-align: left;
+    margin: 30px 20px;    
+  }  
+  .selected-appointment-data table {
+    border-collapse: collapse;
+    width: 70%;
+  }  
+  .selected-appointment-data th{
+    background-color: #1877f2;
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .selected-appointment-data th, 
+  .selected-appointment-data td {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+  .selected-appointment-data .td-data-name{
+    text-transform: uppercase;
+  }
+  .selected-appointment-data .td-data-name span{
+    font-weight: 600;
+  }
+  .selected-appointment-data table tr:hover{
+    background-color: #ececec; 
+  }
+
+
+
+
+/* MODAL CSS OVVERRIDE */
+#modalform{
+    padding: 4.5rem;
+}
+#modalform span{
+    text-transform: uppercase;
+}
+#modalform p{
+    font-size: 2rem;   
+}
+#modalform .fullname{
+    color: blue;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2rem;
+}
+.blocker{
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* ###### TABLE DESIGN */
+.client-details table, 
+.client-details td, 
+.client-details th {  
+    border: 1px solid #ddd;
+    text-align: left;
+    margin: 10px;    
+  }  
+  .client-details table {
+    border-collapse: collapse;
+    width: 100%;
+  }  
+  .client-details th{
+    background-color: rgb(41, 40, 40);
+    color: #ddd;
+  }
+  .client-details th, 
+  .client-details td {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+  .client-details .td-data-name{
+    text-transform: uppercase;
+  }
+  .client-details .td-data-title{
+    background-color: #1877f2;
+    color: whitesmoke;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .client-details .td-data-name span{
+    font-weight: 600;
+  }
+  .client-details table tr:hover{
+    background-color: #ececec; 
+  }
+  .client-details h2{
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .client-details td span a{
+    font-size: 1.1rem;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: white;;
+    padding: 4px 10px;
+    background-color: green;
+    border-radius: 5px;
+  }
+
+  .client-details table .dta-hide{
+    display: none;
+  }
+
+  .client-details table td .btn-update,
+  .client-details table td .btn-cancel{
+    padding: 5px 15px;
+    border-radius: 7px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    cursor: pointer;
+    margin-right: 10px;
+    border-color: transparent;
+  }
+  .client-details table tr.dta-edit-buttons td{
+    text-align: center;
+  }
+  .client-details table td .btn-update{
+    background-color: green;
+    color: #ececec;
+  }
+  .client-details table td .btn-cancel{
+    background-color: red;
+    color: #ececec;
+  }
+  .client-details table td input,
+  .client-details table td select{
+    padding: 5px;
+  }
+  .client-details table td.dta-bg-green{
+    background-color: green;
+  }
+
+
+  .main-container .sidebarleft .sidemenu .visited-link{
+    background-color: #5e095f;
+    color: antiquewhite;
+  }
